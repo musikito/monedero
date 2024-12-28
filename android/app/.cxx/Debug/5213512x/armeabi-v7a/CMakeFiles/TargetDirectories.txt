@@ -1,0 +1,2 @@
+/Users/josemiguelmarte/Downloads/moneyp/android/app/.cxx/Debug/5213512x/armeabi-v7a/CMakeFiles/edit_cache.dir
+/Users/josemiguelmarte/Downloads/moneyp/android/app/.cxx/Debug/5213512x/armeabi-v7a/CMakeFiles/rebuild_cache.dir

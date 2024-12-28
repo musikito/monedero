@@ -1,0 +1,2 @@
+/Users/josemiguelmarte/Downloads/moneyp/android/app/.cxx/Debug/5213512x/x86/CMakeFiles/edit_cache.dir
+/Users/josemiguelmarte/Downloads/moneyp/android/app/.cxx/Debug/5213512x/x86/CMakeFiles/rebuild_cache.dir
