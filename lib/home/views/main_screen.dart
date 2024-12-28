@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -68,6 +70,66 @@ class MainScreen extends StatelessWidget {
                
               ],
             ),
+            /// A container with a height of half the screen width and a width of the full screen width.
+            /// The container has a yellow background color and rounded corners.
+            const SizedBox(height: 10,),
+            Container(
+              height: MediaQuery.of(context).size.width / 2,
+              width: MediaQuery.of(context).size.width,
+              // height: 200,
+              // width: double.infinity,
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                colors: [
+                  Theme.of(context).colorScheme.primary,
+                  Theme.of(context).colorScheme.secondary,
+                  Theme.of(context).colorScheme.tertiary,
+            ],
+              transform: const GradientRotation(pi / 4),
+            ),
+                borderRadius: BorderRadius.circular(35),
+              ),
+              child: Column(
+                children: [
+                  Text("Total Balance"),
+                  Text("\$ 3,000,000,000.00"),
+                  Row(
+                    children:[
+                      Row(
+                        children: [
+                          Container(
+                            height: 25,
+                            width: 25,
+                            decoration: const BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: Colors.white30,
+                            ),
+                            child: Center(
+                              child: 
+                              Icon(
+                              CupertinoIcons.arrow_down,
+                              size: 15,
+                              )
+                            )
+                          ),
+                          const SizedBox(width: 10,),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children:[
+                            Text("Income"),
+                            Text("\$ 2,599.00"),
+                            ]
+                          )
+                          // Icon(CupertinoIcons.arrow_up_circle_fill),
+                          // Text("Income"),
+                          // Text("\$ 2,599.00"),
+                        ]
+                      )
+                    ]
+                  )
+                ],
+              )
+            )
           ],
         ),
       ),
