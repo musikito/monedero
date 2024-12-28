@@ -1,25 +1,41 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get_connect/http/src/utils/utils.dart';
+
 
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
+/// Builds the main screen of the application, displaying a welcome message and user information.
+/// The screen includes a circular avatar, the user's name, and a settings button.
+/// The layout is structured using a [Row] and [Column] to align the elements.
+    Widget build(BuildContext context) {
     return SafeArea(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+        padding: const EdgeInsets.symmetric(horizontal: 25.0,  vertical: 10),
         child: Column(
           children: [
             Row(
               children: [
-                Container(
-                  width: 50,
-                  height: 50,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: Colors.yellow[700],
-                  ),
+                /// Displays a circular avatar with a person icon in the center.
+                /// The avatar has a yellow background color.
+                Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    Container(
+                      width: 50,
+                      height: 50,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Colors.yellow[700],
+                      ),
+                    ),
+                    Icon(
+                      CupertinoIcons.person_fill,
+                      // color: Theme.of(context).colorScheme.outline,
+                      color: Colors.yellow[900],
+                    )
+                  ],
                 ),
                 const SizedBox(width: 8,),
                 Column(
@@ -38,11 +54,18 @@ class MainScreen extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
-                        color: Theme.of(context).colorScheme.onBackground,
+                        color: Theme.of(context).colorScheme.onSurface,
                       ),
                     ),
                   ],
                 ),
+                /// Adds a spacer and a settings button to the row layout.
+                /// The spacer pushes the settings button to the right side of the row.
+                /// The settings button is an [IconButton] that calls an empty `onPressed` callback when tapped.
+                const Spacer(),
+                IconButton(onPressed: () {}, icon: Icon(CupertinoIcons.settings)
+                )
+               
               ],
             ),
           ],

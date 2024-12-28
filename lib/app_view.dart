@@ -11,8 +11,8 @@ class MyAppView extends StatelessWidget {
       title: "Monedero",
       theme: ThemeData(
         colorScheme: ColorScheme.light(
-          background: Colors.grey.shade100,
-          onBackground: Colors.black,
+          surface: Colors.grey.shade100,
+          onSurface: Colors.black,
           primary: Color(0xFF00B2E7),
           secondary: Color(0xFFE064f7),
           tertiary: Color(0xFFFF8D6C),
