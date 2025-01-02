@@ -87,45 +87,136 @@ class MainScreen extends StatelessWidget {
             ],
               transform: const GradientRotation(pi / 4),
             ),
-                borderRadius: BorderRadius.circular(35),
+
+                borderRadius: BorderRadius.circular(25),
+                 // Add some elevation to the container
+                 boxShadow: [
+                  BoxShadow(
+                    blurRadius: 5,
+                    color: Colors.grey.shade300,
+                    offset: const Offset(5, 5),
+                  ),
+                 ]
               ),
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("Total Balance"),
-                  Text("\$ 3,000,000,000.00"),
-                  Row(
-                    children:[
-                      Row(
-                        children: [
-                          Container(
-                            height: 25,
-                            width: 25,
-                            decoration: const BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: Colors.white30,
-                            ),
-                            child: Center(
-                              child: 
-                              Icon(
-                              CupertinoIcons.arrow_down,
-                              size: 15,
+                  Text(
+                    "Total Balance",
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.white,
+                    ),
+                    ),
+                    // const SizedBox(height: 10,),
+                  Text("\$ 3,000,000.00",
+                   style: TextStyle(
+                      fontSize: 40,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                      ),
+                  ),
+                  // TODO convert to a widget
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 20),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children:[
+                        // Income row
+                        Row(
+                          children: [
+                            Container(
+                              height: 25,
+                              width: 25,
+                              decoration: const BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Colors.white30,
+                              ),
+                              child: Center(
+                                child: 
+                                Icon(
+                                CupertinoIcons.arrow_down,
+                                color: Colors.greenAccent,
+                                size: 15,
+                                )
                               )
+                            ),
+                            const SizedBox(width: 10,),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children:[
+                              Text(
+                                "Income",
+                                style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w400,
+                                color: Colors.white,
+                                ),
+                                ),
+                              Text(
+                                "\$ 2,599.00",
+                                style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.white,
+                                ),
+                              ),
+                              ]
                             )
-                          ),
-                          const SizedBox(width: 10,),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children:[
-                            Text("Income"),
-                            Text("\$ 2,599.00"),
-                            ]
-                          )
-                          // Icon(CupertinoIcons.arrow_up_circle_fill),
-                          // Text("Income"),
-                          // Text("\$ 2,599.00"),
-                        ]
-                      )
-                    ]
+                            // Icon(CupertinoIcons.arrow_up_circle_fill),
+                            // Text("Income"),
+                            // Text("\$ 2,599.00"),
+                          ]
+                        ),
+                        // Expenses row
+                        Row(
+                          children: [
+                            Container(
+                              height: 25,
+                              width: 25,
+                              decoration: const BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Colors.white30,
+                              ),
+                              child: Center(
+                                child: 
+                                Icon(
+                                CupertinoIcons.arrow_down,
+                                color: Colors.redAccent,
+                                size: 15,
+                                )
+                              )
+                            ),
+                            const SizedBox(width: 10,),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children:[
+                              Text(
+                                "Expenses",
+                                style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w400,
+                                color: Colors.white,
+                                ),
+                                ),
+                              Text(
+                                "\$ 599.00",
+                                style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.white,
+                                ),
+                              ),
+                              ]
+                            )
+                            // Icon(CupertinoIcons.arrow_up_circle_fill),
+                            // Text("Income"),
+                            // Text("\$ 2,599.00"),
+                          ]
+                        )
+                      ]
+                    ),
                   )
                 ],
               )
