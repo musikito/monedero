@@ -220,7 +220,36 @@ class MainScreen extends StatelessWidget {
                   )
                 ],
               )
-            )
+            ),
+            const SizedBox(height: 40,),
+            /// Displays a row with the "Recent Transactions" title and a "View All" link.
+            /// This row is likely part of the main screen's UI, providing a summary of
+            /// recent financial transactions and allowing the user to view more details.
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "Recent Transactions",
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: Theme.of(context).colorScheme.onSurface,
+                  ),
+                ),
+                 GestureDetector(
+                  onTap: () => {},
+                   child: Text(
+                    "View All",
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400,
+                      color: Theme.of(context).colorScheme.outline,
+                    ),
+                                   ),
+                 )
+              ],
+            ),
+            const SizedBox(height: 20,),
           ],
         ),
       ),
